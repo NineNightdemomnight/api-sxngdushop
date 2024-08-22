@@ -1,7 +1,7 @@
 {
-  "name": "express-api",
+  "name": "verify-code-api",
   "version": "1.0.0",
-  "description": "Express API for Vercel",
+  "description": "API for verifying codes",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
