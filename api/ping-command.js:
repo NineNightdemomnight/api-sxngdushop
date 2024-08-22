@@ -1,0 +1,23 @@
+// สมมติว่าคุณมีข้อมูล pingData อยู่ที่นี่
+const pingData = {
+  latency: 20, // ตัวอย่างค่า
+  clientPing: 30 // ตัวอย่างค่า
+};
+
+module.exports = async (req, res) => {
+  if (pingData.latency !== null && pingData.clientPing !== null) {
+      res.status(200).json({
+          success: true,
+          command: {
+              name: 'ping',
+              description: 'ดู Ping Bot',
+              message: `API Latency: ${pingData.latency} ms\nClient Ping: ${pingData.clientPing} ms`
+          }
+      });
+  } else {
+      res.status(500).json({
+          success: false,
+          message: 'Ping data not available'
+      });
+  }
+};
