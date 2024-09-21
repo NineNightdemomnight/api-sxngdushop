@@ -14,7 +14,7 @@
   "dependencies": {
     "express": "^4.21.0",
     "axios": "^0.21.1",
-    "cheerio": "^1.0.0-rc.5",
+   "cheerio": "^1.0.0-rc.5",
     "undici": "^4.2.1"
   }
 }
