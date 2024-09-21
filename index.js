@@ -1,20 +1,28 @@
-// index.js
-const express = require('express')
+import express from 'express';
+import byFluxus from './api/byfluxus.js';
+import byRelzScript from './api/byrelzscript.js';
 
-const app = express()
-const PORT = 4000
+const app = express();
+const PORT = process.env.PORT || 4000;
 
-app.listen(PORT, () => {
-  console.log(`API listening on PORT ${PORT} `)
-})
-
+// เส้นทางหลัก
 app.get('/', (req, res) => {
-  res.send('Hey this is my API running 🥳')
-})
+  res.send('Hey this is my API running 🥳');
+});
 
+// เส้นทางเกี่ยวกับ
 app.get('/about', (req, res) => {
-  res.send('This is my about route..... ')
-})
+  res.send('This is my about route..... ');
+});
+
+// ใช้งาน API
+app.use('/api/byfluxus', byFluxus);
+app.use('/api/byrelzscript', byRelzScript);
+
+// เริ่มต้นเซิร์ฟเวอร์
+app.listen(PORT, () => {
+  console.log(`API listening on PORT ${PORT}`);
+});
 
 // Export the Express API
-module.exports = app
+export default app;
